@@ -6,7 +6,7 @@ metadata:
   labels:
     job-name: check-qm1-ready
   annotations:
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "20"
 spec:
   parallelism: 1
   completions: 1
