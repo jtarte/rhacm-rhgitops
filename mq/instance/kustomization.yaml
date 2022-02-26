@@ -5,3 +5,4 @@ resources:
 - mq-certificate.yaml
 - gitops-mq-rb.yaml
 - check.yaml
+- argocd-rb.yaml
