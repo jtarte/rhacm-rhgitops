@@ -1,0 +1,12 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: rhgitops-policy-placement-binding
+placementRef:
+  name: gitops-placement
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: rhgitops-config-policy
+  kind: Policy
+  apiGroup: policy.open-cluster-management.io

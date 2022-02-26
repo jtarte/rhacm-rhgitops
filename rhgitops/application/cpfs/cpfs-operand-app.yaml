@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cpfs
+  namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: ibm-common-services
+    server: https://kubernetes.default.svc
+  project: cloudpak
+  source:
+    path: cloudpak/cpfs
+    repoURL: https://github.com/jtarte/rhacm-rhgitops
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

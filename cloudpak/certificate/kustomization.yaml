@@ -1,0 +1,5 @@
+resources:
+- cluster-issuer.yaml 
+- gitops-rolebinding.yaml 
+- gitops-csissuer-rb.yaml
+

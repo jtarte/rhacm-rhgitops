@@ -1,0 +1,8 @@
+resources:
+- namespace.yaml
+- mq-instance.yaml
+- mq-cm.yaml
+- mq-certificate.yaml
+- gitops-mq-rb.yaml
+- check.yaml
+- argocd-rb.yaml

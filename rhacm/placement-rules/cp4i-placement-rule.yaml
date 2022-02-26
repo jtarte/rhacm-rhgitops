@@ -1,0 +1,11 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  annotations:
+  labels:
+    app: cp4i
+  name: cp4i-placement
+spec:
+  clusterSelector:
+    matchLabels:
+      'cp4i-cluster': 'true'

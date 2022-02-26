@@ -1,0 +1,15 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: openshift-gitops-application-controller-deployer
+  namespace: cp4i-mq-project
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+subjects:
+  - kind: ServiceAccount
+    name: deployer
+    namespace: cp4i-mq-project
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: queuemanagers.mq.ibm.com-v1beta1-view

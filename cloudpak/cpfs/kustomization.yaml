@@ -1,0 +1,4 @@
+resources:
+- operand.yaml
+- check.yaml
+- argocd-rb.yaml

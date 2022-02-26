@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mq-configmap
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+data:
+  qm1.mqsc: |
+    Define QL(TEST.IN) DEFPSIST(YES) MAXDEPTH(1000000) MAXMSGL(41943040) REPLACE
+    Define QL(TEST) DEFPSIST(YES) MAXDEPTH(1000000) MAXMSGL(41943040) REPLACE
+   
+    DEFINE CHANNEL(SVR.CONN) CHLTYPE(SVRCONN) TRPTYPE(TCP) DESCR('Server-connection to Client_2')  REPLACE
+
+    DEFINE CHANNEL(APPCHL) CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCAUTH(OPTIONAL) SSLCIPH('ANY_TLS12_OR_HIGHER')  REPLACE
+    SET CHLAUTH(APPCHL) TYPE(BLOCKUSER) USERLIST('nobody') ACTION(ADD)
+
+    ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) CHCKCLNT(NONE) CHCKLOCL(NONE) 
+    
+    set chlauth(system.*) type(addressmap) address(*) action(remove)
+    set chlauth(*) type(blockuser) userlist(*mqadmin) action(remove)
+    set chlauth(system.def.svrconn) type(addressmap) address(*) mcauser (admin) action(add)
+    
+    REFRESH SECURITY
+
+
+  
