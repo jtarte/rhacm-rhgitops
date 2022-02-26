@@ -10,7 +10,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: test2-prod-ns
+          name: entitlment-key
         spec:
           remediationAction: inform
           severity: low
