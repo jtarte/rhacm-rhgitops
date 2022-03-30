@@ -15,7 +15,7 @@ spec:
     license: L-RJON-C7BJ42
     use: nonproduction
   databaseVolumeClaimTemplate:
-    storageClassName: ibmc-vpc-block-10iops-tier
+    storageClassName: ocs-storagecluster-ceph-rbd
   certManagerIssuer:
     name: selfsigning-issuer
     kind: Issuer
