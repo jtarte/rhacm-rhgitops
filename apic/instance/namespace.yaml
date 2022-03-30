@@ -1,0 +1,6 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: cp4i-apic-project
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"

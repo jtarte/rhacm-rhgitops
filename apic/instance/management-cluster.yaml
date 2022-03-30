@@ -1,0 +1,45 @@
+apiVersion: management.apiconnect.ibm.com/v1beta1
+kind: ManagementCluster
+metadata:
+  name: apic-management
+  labels:
+    app.kubernetes.io/instance: management
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: apic-management
+  namespace: cp4i-apic-project
+spec:
+  license:
+    accept: true
+    license: L-RJON-C7BJ42
+    use: nonproduction
+  databaseVolumeClaimTemplate:
+    storageClassName: ocs-storagecluster-ceph-rbd  
+  certManagerIssuer:
+    name: selfsigning-issuer
+    kind: Issuer
+  gateway:
+    client:
+      secretName: gateway-client-client
+  analytics:
+    client:
+      secretName: analytics-client-client
+    ingestion:
+      secretName: analytics-ingestion-client
+  apiManagerEndpoint:
+    annotations:
+      cert-manager.io/issuer: ingress-issuer
+  profile: n1xc4.m16
+  portal:
+    admin:
+      secretName: portal-admin-client
+  cloudManagerEndpoint:
+    annotations:
+      cert-manager.io/issuer: ingress-issuer
+  microServiceSecurity: certManager
+  version: 10.0.4.0
+  consumerAPIEndpoint:
+    annotations:
+      cert-manager.io/issuer: ingress-issuer
+  platformAPIEndpoint:
+    annotations:
+      cert-manager.io/issuer: ingress-issuer
