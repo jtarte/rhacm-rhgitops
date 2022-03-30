@@ -1,0 +1,4 @@
+resources:
+- argocd-rb.yaml
+- ingress-issuer.yaml
+- management-cluster.yaml
