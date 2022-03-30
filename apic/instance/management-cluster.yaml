@@ -6,6 +6,8 @@ metadata:
     app.kubernetes.io/instance: management
     app.kubernetes.io/managed-by: ibm-apiconnect
     app.kubernetes.io/name: apic-management
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
   namespace: cp4i-apic-project
 spec:
   license:
