@@ -4,3 +4,5 @@ metadata:
   name: cp4i-apic-project
   annotations:
     argocd.argoproj.io/sync-wave: "5"
+  labels:
+    kubernetes.io/metadata.name: cp4i-apic-project
