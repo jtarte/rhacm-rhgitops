@@ -23,7 +23,7 @@ metadata:
     app.kubernetes.io/name: "ingress-ca"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "21"
 spec:
   secretName: ingress-ca
   commonName: "ingress-ca"
@@ -46,7 +46,7 @@ metadata:
     app.kubernetes.io/name: "ingress-issuer"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "22"
 spec:
   ca:
     secretName: ingress-ca
@@ -61,7 +61,7 @@ metadata:
     app.kubernetes.io/name: "portal-admin-client"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: portal-admin-client
   secretName: portal-admin-client
@@ -84,7 +84,7 @@ metadata:
     app.kubernetes.io/name: "gateway-client-client"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: gateway-client-client
   secretName: gateway-client-client
@@ -107,7 +107,7 @@ metadata:
     app.kubernetes.io/name: "analytics-client-client"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: analytics-client-client
   secretName: analytics-client-client
@@ -130,7 +130,7 @@ metadata:
     app.kubernetes.io/name: "analytics-ingestion-client"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: analytics-ingestion-client
   secretName: analytics-ingestion-client
@@ -153,7 +153,7 @@ metadata:
     app.kubernetes.io/name: "gateway-service"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: gateway-service
   secretName: gateway-service
@@ -176,7 +176,7 @@ metadata:
     app.kubernetes.io/name: "gateway-peering"
   }
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "23"
 spec:
   commonName: gateway-peering
   secretName: gateway-peering
